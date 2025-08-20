@@ -1,9 +1,7 @@
 import dbConnect from '@/lib/dbConnect'
-import ProductCard from './components/ProductCard'
 import AllProducts from './components/AllProducts';
 
 export default async function Page() {
-    const products = await dbConnect("products").find({}).toArray();
 
     return (
         <div className="p-6">
