@@ -1,26 +1,73 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Light Theme */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-primary: #1e3c67;
+  --color-primary-focus: #14294a;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #df9e9a;
+  --color-secondary-focus: #b87c78;
+  --color-secondary-content: #0b0407;
+
+  --color-accent: #d39273;
+  --color-accent-focus: #aa7259;
+  --color-accent-content: #0b0407;
+
+  --color-base-100: #fcf8f9;
+  /* background */
+  --color-base-200: #ffffff;
+  --color-base-300: #e5e7eb;
+  --color-base-content: #0b0407;
+  /* text */
+
+  --color-neutral: #737373;
+  --color-neutral-focus: #525252;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #3B82F6;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Dark Theme */
+@plugin "daisyui/theme" {
+  name: "dark";
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-primary: #1e3c67;
+  --color-primary-focus: #6a8ab5;
+  --color-primary-content: #0b0407;
+
+  --color-secondary: #652320;
+  --color-secondary-focus: #471816;
+  --color-secondary-content: #fbf4f7;
+
+  --color-accent: #8c4a2c;
+  --color-accent-focus: #6b3620;
+  --color-accent-content: #fbf4f7;
+
+  --color-base-100: #070304;
+  /* background */
+  --color-base-200: #0f0f0f;
+  --color-base-300: #1c1c1c;
+  --color-base-content: #fbf4f7;
+  /* text */
+
+  --color-neutral: #262626;
+  --color-neutral-focus: #171717;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #60A5FA;
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-error: #F87171;
 }
