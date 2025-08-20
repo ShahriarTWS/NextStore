@@ -14,9 +14,10 @@ const nextConfig = {
             'lh3.googleusercontent.com',
             'static.gopro.com',
             'hydraulic-cdn.com',
-            'img.us.news.samsung.com' ,
+            'img.us.news.samsung.com',
             'loyaltydrones.com',
-            '' // add this
+            'img.freepik.com',
+            't3.ftcdn.net' // add this
         ],
     },
 };
