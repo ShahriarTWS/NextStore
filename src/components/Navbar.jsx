@@ -1,8 +1,11 @@
+"use client"
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import MobileMenu from "./MobileMenu"; // Client Component
+import { signOut, useSession } from "next-auth/react";
 
 export default function Navbar() {
+    const { data: session, status } = useSession();
     return (
         <nav className="sticky top-0 left-0 w-full z-50 bg-base-100/80 backdrop-blur-lg shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,13 +23,24 @@ export default function Navbar() {
                         <Link href="/" className="font-medium text-base hover:text-primary transition">Home</Link>
                         <Link href="/products" className="font-medium text-base hover:text-primary transition">Products</Link>
                         <Link href="/about" className="font-medium text-base hover:text-primary transition">About</Link>
+                        {
+                            status == 'authenticated' && <Link href="/dashboard/add-product" className="font-medium text-base hover:text-primary transition">Add  Products</Link>
+                        }
                     </div>
 
                     {/* Right Buttons */}
                     <div className="flex items-center gap-3">
                         <ThemeToggle />
-                        <Link href="/login" className="btn btn-sm btn-primary text-white">Login</Link>
-                        <Link href="/signup" className="btn btn-sm btn-outline rounded">Sign Up</Link>
+                        {
+                            status == 'authenticated' ? (
+                                <>
+                                    <button onClick={() => signOut()} className="btn btn-sm btn-primary text-white">Logout</button>
+                                </>
+                            ) : (<>
+                                <Link href="/login" className="btn btn-sm btn-primary text-white">Login</Link>
+                                <Link href="/signup" className="btn btn-sm btn-outline rounded">Sign Up</Link>
+                            </>)
+                        }
 
                         {/* Mobile Menu */}
                         <MobileMenu />

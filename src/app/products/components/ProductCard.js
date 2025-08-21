@@ -9,10 +9,12 @@ export default async function ProductCard({ product }) {
             {/* Product Image */}
             <div className="relative w-full h-60 rounded-xl overflow-hidden">
                 <Image
-                    src={product.image}      // use actual value, no quotes
+                    placeholder="blur" blurDataURL="..."
+                    src={product.image}
                     alt={product.name}
                     fill
                     className="object-cover"
+                    sizes="100%"
                 />
             </div>
 
@@ -29,7 +31,7 @@ export default async function ProductCard({ product }) {
 
                     {/* View Details Button */}
                     <Link href={`/products/${product._id}`}>
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 xl:px-6 rounded-full transition duration-300">
+                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 xl:px-6 rounded-full transition duration-300 cursor-pointer">
                             View Details
                         </button>
                     </Link>

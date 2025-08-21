@@ -10,7 +10,11 @@ export default async function ProductDetails({ params }) {
         return <p>Product not found.</p>;
     }
 
-    const product = await dbConnect("products").findOne({ _id: new ObjectId(id) });
+    // Fetch product from API route
+    const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+        cache: "no-store", // always fresh data
+    });
+    const product = await res.json();
 
     if (!product) {
         return <p>Product not found.</p>;
@@ -29,7 +33,7 @@ export default async function ProductDetails({ params }) {
                         alt={product.name}
                         fill
                         className="object-cover rounded-lg"
-                        priority
+                    // priority
                     />
                 </div>
 

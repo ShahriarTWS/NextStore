@@ -13,14 +13,16 @@ export default async function FeaturedProducts() {
     const featured = products.slice(0, 6);
 
     return (
-        <div className="p-6 max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center">Featured Products</h2>
+        <div className="py-6 max-w-7xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-center my-6">
+                Featured Products
+            </h1>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {featured.map(product => (
                     <ProductCard key={product._id} product={product} />
                 ))}
             </div>
-<ViewAllBtn></ViewAllBtn>
+            <ViewAllBtn></ViewAllBtn>
         </div>
     )
 }

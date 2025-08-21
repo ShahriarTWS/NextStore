@@ -3,12 +3,12 @@ import React from "react";
 
 export default function AboutPage() {
     return (
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="max-w-7xl mx-auto py-6">
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
                 About Us
             </h1>
-            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            <p className="text-lg  text-center max-w-3xl mx-auto mb-12">
                 Welcome to <span className="font-semibold text-blue-600">Our Store</span> —
                 your trusted destination for high-quality products at the best prices.
                 We combine modern design, great value, and excellent service to give
@@ -21,7 +21,7 @@ export default function AboutPage() {
                     <h2 className="text-2xl md:text-3xl font-semibold mb-4">
                         Our Mission
                     </h2>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className=" leading-relaxed">
                         Our mission is simple: to make shopping enjoyable, affordable,
                         and reliable. We handpick our products with care and ensure that
                         every item meets our quality standards. Customer satisfaction is
@@ -33,6 +33,8 @@ export default function AboutPage() {
                         src="https://img.freepik.com/premium-photo/man-touching-mission-text-screen_218381-4228.jpg?semt=ais_hybrid&w=740&q=80"
                         alt="Our Mission"
                         fill
+                        placeholder="blur" blurDataURL="..."
+                        sizes="100%"
                         className="object-cover rounded-2xl shadow-lg"
                     />
                 </div>
@@ -52,7 +54,7 @@ export default function AboutPage() {
                     <h2 className="text-2xl md:text-3xl font-semibold mb-4">
                         Our Vision
                     </h2>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className=" leading-relaxed">
                         We envision a community where people shop with confidence, knowing
                         they are getting value for their money. By constantly innovating
                         and improving, we aim to become a leading platform for modern,
@@ -71,7 +73,7 @@ export default function AboutPage() {
                         <h3 className="text-lg font-semibold mb-2 text-blue-600">
                             ✅ Quality Products
                         </h3>
-                        <p className="text-gray-600 text-sm">
+                        <p className=" text-sm">
                             Each product is carefully chosen to meet our quality standards.
                         </p>
                     </div>
@@ -79,7 +81,7 @@ export default function AboutPage() {
                         <h3 className="text-lg font-semibold mb-2 text-blue-600">
                             🚀 Fast Delivery
                         </h3>
-                        <p className="text-gray-600 text-sm">
+                        <p className=" text-sm">
                             We deliver quickly and ensure your products reach you on time.
                         </p>
                     </div>
@@ -87,7 +89,7 @@ export default function AboutPage() {
                         <h3 className="text-lg font-semibold mb-2 text-blue-600">
                             💬 24/7 Support
                         </h3>
-                        <p className="text-gray-600 text-sm">
+                        <p className=" text-sm">
                             Our support team is always available to help you.
                         </p>
                     </div>

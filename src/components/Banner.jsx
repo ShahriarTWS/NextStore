@@ -19,10 +19,10 @@ export default function Banner() {
 
                 {/* Content */}
                 <div className="relative text-center text-white px-6 max-w-3xl">
-                    <h1 className="text-4xl md:text-6xl font-semibold leading-tight drop-shadow-lg">
+                    <h1 className="text-4xl md:text-6xl font-semibold leading-tight drop-shadow-lg ">
                         Welcome to World Of <span className="font-bold">Gadgets & Accessories</span>
                     </h1>
-                    <p className="mt-6 text-lg md:text-xl text-gray-200">
+                    <p className="mt-6 text-lg md:text-xl  bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-xl shadow-lg transition duration-300 p-6">
                         Upgrade your life with smart gadgets and stylish accessories that make everyday life easier and more fun.
                     </p>
                     <div className="mt-8 flex flex-wrap justify-center gap-4">

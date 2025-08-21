@@ -17,7 +17,9 @@ const nextConfig = {
             'img.us.news.samsung.com',
             'loyaltydrones.com',
             'img.freepik.com',
-            't3.ftcdn.net' // add this
+            't3.ftcdn.net',
+            'images.remotePatterns',
+            'i.ibb.co' // add this
         ],
     },
 };

@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 export default function MobileMenu() {
     const [open, setOpen] = useState(false);
+    const { data: session, status } = useSession();
 
     return (
         <div className="lg:hidden relative">
@@ -38,6 +40,11 @@ export default function MobileMenu() {
                     <li>
                         <Link href="/about">About</Link>
                     </li>
+                    {
+                        status == 'authenticated' && <li>
+                            <Link href="/dashboard/add-product">Add Product</Link>
+                        </li>
+                    }
                 </ul>
             )}
         </div>
