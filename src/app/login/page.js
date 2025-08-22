@@ -2,6 +2,12 @@ import Link from "next/link";
 import React from "react";
 import LoginForm from "./components/LoginForm";
 
+export const metadata = {
+    title: "Login | NextStore",
+    description:
+        "Access your NextStore account to manage orders, track deliveries, and enjoy a personalized shopping experience. Secure and easy login.",
+};
+
 export default function Login() {
     return (
         <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">

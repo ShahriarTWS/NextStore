@@ -45,7 +45,7 @@ export default function LoginForm() {
                 text: "Something went wrong!",
                 icon: "error"
             });
-            console.log(error);
+            // console.log(error);
         }
     }
 

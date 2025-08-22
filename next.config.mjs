@@ -19,7 +19,8 @@ const nextConfig = {
             'img.freepik.com',
             't3.ftcdn.net',
             'images.remotePatterns',
-            'i.ibb.co' // add this
+            'i.ibb.co',
+            'images.remotePatterns' // add this
         ],
     },
 };

@@ -1,9 +1,15 @@
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+    title: "About | NextStore",
+    description:
+        "Learn more about NextStore – our mission, values, and commitment to delivering high-quality products with an exceptional shopping experience.",
+};
+
 export default function AboutPage() {
     return (
-        <div className="max-w-7xl mx-auto py-6">
+        <div className="max-w-7xl mx-auto py-6 px-4 md:px-0">
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
                 About Us
@@ -48,6 +54,7 @@ export default function AboutPage() {
                         alt="Our Vision"
                         fill
                         className="object-cover rounded-2xl shadow-lg"
+
                     />
                 </div>
                 <div>

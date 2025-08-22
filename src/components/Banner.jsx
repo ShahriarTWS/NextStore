@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 export default function Banner() {
@@ -26,12 +27,14 @@ export default function Banner() {
                         Upgrade your life with smart gadgets and stylish accessories that make everyday life easier and more fun.
                     </p>
                     <div className="mt-8 flex flex-wrap justify-center gap-4">
-                        <button className="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl font-semibold shadow-lg transition duration-300">
-                            Get Started
-                        </button>
-                        <button className="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 rounded-xl font-semibold shadow-lg transition duration-300">
-                            Learn More
-                        </button>
+                        <Link href={'/products'}>
+                            <button className="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl font-semibold shadow-lg transition duration-300 cursor-pointer">
+                                Explore Now
+                            </button>
+                        </Link>
+                        {/* <button className="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 rounded-xl font-semibold shadow-lg transition duration-300">
+                            Explore Now
+                        </button> */}
                     </div>
                 </div>
             </div>

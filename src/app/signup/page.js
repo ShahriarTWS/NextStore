@@ -2,6 +2,12 @@ import Link from "next/link";
 import React from "react";
 import SignUpForm from "./components/SignUpForm";
 
+export const metadata = {
+    title: "Sign Up | NextStore",
+    description:
+        "Create your NextStore account to start shopping, track your orders, and enjoy a seamless online shopping experience tailored for you.",
+};
+
 export default function Register() {
     return (
         <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">

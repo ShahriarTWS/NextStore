@@ -16,8 +16,19 @@ export default function SignUpForm() {
         const email = form.email.value;
         const password = form.password.value;
 
+        // ✅ Step 1: Validate password BEFORE showing Swal
+        const pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!pattern.test(password)) {
+            Swal.fire({
+                icon: "warning",
+                title: "Invalid Password",
+                text: "Password must be at least 6 characters long, including a number, a lowercase letter, and an uppercase letter.",
+            });
+            return; // Stop submission if invalid
+        }
+
+        // ✅ Step 2: Password is valid → now show loading Swal
         try {
-            // Show loading swal
             Swal.fire({
                 title: "Creating your account...",
                 text: "Please wait",
@@ -27,17 +38,15 @@ export default function SignUpForm() {
                 },
             });
 
-            // 1️⃣ Create user in DB
             const user = await registerUser({ name, email, password });
 
-            // 2️⃣ Immediately sign them in with credentials
             const result = await signIn("credentials", {
                 email,
                 password,
                 redirect: false,
             });
 
-            Swal.close(); // close loading
+            Swal.close();
 
             if (result?.ok) {
                 Swal.fire({
@@ -69,50 +78,50 @@ export default function SignUpForm() {
         }
     };
 
-
     return (
         <div>
             <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Full Name */}
                 <div>
                     <label className="block text-sm font-medium text-gray-200 mb-2">
                         Full Name
                     </label>
                     <input
                         type="text"
-                        className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                        placeholder="Enter your full name"
                         name="name"
+                        placeholder="Enter your full name"
+                        required
+                        className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     />
                 </div>
 
-                {/* Email */}
                 <div>
                     <label className="block text-sm font-medium text-gray-200 mb-2">
                         Email
                     </label>
                     <input
                         type="email"
-                        className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                        placeholder="Enter your email"
                         name="email"
+                        placeholder="Enter your email"
+                        required
+                        className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     />
                 </div>
 
-                {/* Password */}
                 <div>
                     <label className="block text-sm font-medium text-gray-200 mb-2">
                         Password
                     </label>
                     <input
                         type="password"
-                        className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                        placeholder="Create a password"
                         name="password"
+                        placeholder="Create a password"
+                        required
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must be at least 8 characters, including a number, lowercase, and uppercase letter"
+                        className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     />
                 </div>
 
-                {/* Login redirect */}
                 <div className="flex items-center justify-between text-sm text-gray-300">
                     <p>Already have an account?</p>
                     <Link href="/login" className="hover:underline">
@@ -120,7 +129,6 @@ export default function SignUpForm() {
                     </Link>
                 </div>
 
-                {/* Sign Up Button */}
                 <button
                     type="submit"
                     className="w-full py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-lg shadow-lg transition-all duration-300"

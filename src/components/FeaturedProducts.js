@@ -13,7 +13,7 @@ export default async function FeaturedProducts() {
     const featured = products.slice(0, 6);
 
     return (
-        <div className="py-6 max-w-7xl mx-auto">
+        <div className="py-6 max-w-7xl mx-auto px-4 md:px-0">
             <h1 className="text-4xl md:text-5xl font-bold text-center my-6">
                 Featured Products
             </h1>
